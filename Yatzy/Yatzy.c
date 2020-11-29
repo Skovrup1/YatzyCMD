@@ -356,7 +356,6 @@ int fullHouse(int diceReg[]) {
 int chance(int diceReg[]) {
 	int i, sum = 0, count = 0;
 
-
 	for (i = DIE_SIDES - 1; i > 0; --i) {
 		/* sum "DIE_SIDES" numbers in diceReg starting from highest die */
 		sum += diceReg[i] * (i + 1);
