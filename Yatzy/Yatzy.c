@@ -356,15 +356,19 @@ int fullHouse(int diceReg[]) {
 int chance(int diceReg[]) {
 	int i, sum = 0, count = 0;
 
-	//overshooting max_dice
 
 	for (i = DIE_SIDES - 1; i > 0; --i) {
 		/* sum "DIE_SIDES" numbers in diceReg starting from highest die */
 		sum += diceReg[i] * (i + 1);
 
+		/* keep track of how many dice has been used */
 		count += diceReg[i];
 
-		if (count == MAX_DICE) {
+		if (count >= MAX_DICE) {
+
+			/* correct if it overshoots allowed number of dice */
+			sum -= (count-MAX_DICE) * (i + 1);
+
 			break;
 		}
 	}
