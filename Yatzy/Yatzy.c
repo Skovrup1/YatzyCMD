@@ -10,7 +10,7 @@
 
 #define MAX_DICE 5
 #define DIE_SIDES 6
-#define DIE_COMBINATIONS 16
+#define DICE_COMBINATIONS 16
 
 int randmax(int max);
 
@@ -37,7 +37,7 @@ int chance(int diceReg[]);
 int total(int score[]);
 
 int main() {
-	int scoreboard[DIE_COMBINATIONS];
+	int scoreboard[DICE_COMBINATIONS];
 
 	int diceRegister[DIE_SIDES];
 
@@ -378,7 +378,7 @@ int chance(int diceReg[]) {
 int total(int score[]) {
 	int i, sum = 0;
 
-	for (i = 0; i < DIE_COMBINATIONS; ++i) {
+	for (i = 0; i < DICE_COMBINATIONS; ++i) {
 		sum += score[i];
 	}
 
